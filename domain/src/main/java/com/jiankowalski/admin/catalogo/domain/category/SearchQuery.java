@@ -1,6 +1,6 @@
 package com.jiankowalski.admin.catalogo.domain.category;
 
-public record CategorySearchQuery(
+public record SearchQuery(
         int page,
         int perPage,
         String terms,

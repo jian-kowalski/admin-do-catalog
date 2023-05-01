@@ -2,6 +2,7 @@ package com.jiankowalski.admin.catalogo.domain.category;
 
 import com.jiankowalski.admin.catalogo.domain.Pagination;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface CategoryGateway {
@@ -13,5 +14,7 @@ public interface CategoryGateway {
 
     Category update(Category aCategory);
 
-    Pagination<Category> findAll(CategorySearchQuery aQuery);
+    Pagination<Category> findAll(SearchQuery aQuery);
+
+    void existsByIds(List<CategoryID> ids);
 }

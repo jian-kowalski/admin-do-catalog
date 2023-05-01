@@ -3,7 +3,7 @@ package com.jiankowalski.admin.catalogo.application.category.retrieve.list;
 import com.jiankowalski.admin.catalogo.domain.Pagination;
 import com.jiankowalski.admin.catalogo.domain.category.Category;
 import com.jiankowalski.admin.catalogo.domain.category.CategoryGateway;
-import com.jiankowalski.admin.catalogo.domain.category.CategorySearchQuery;
+import com.jiankowalski.admin.catalogo.domain.category.SearchQuery;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,7 +47,7 @@ public class ListCategoryUseCaseTest {
 
         final var expectedItemsCount = 2;
         final var expectedResult = expectedPagination.map(CategoryListOutput::from);
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms,
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms,
                 expectedSort, expectedDirection);
         when(categoryGateway.findAll(eq(aQuery)))
                 .thenReturn(expectedPagination);
@@ -75,7 +75,7 @@ public class ListCategoryUseCaseTest {
 
         final var expectedItemsCount = 0;
         final var expectedResult = expectedPagination.map(CategoryListOutput::from);
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms,
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms,
                 expectedSort, expectedDirection);
         when(categoryGateway.findAll(eq(aQuery)))
                 .thenReturn(expectedPagination);
@@ -98,7 +98,7 @@ public class ListCategoryUseCaseTest {
         final var expectedSort = "createdAt";
         final var expectedDirection = "asc";
         final var expectedErrorMessage = "Gateway error";
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms,
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms,
                 expectedSort, expectedDirection);
         when(categoryGateway.findAll(eq(aQuery)))
                 .thenThrow(new IllegalStateException(expectedErrorMessage));

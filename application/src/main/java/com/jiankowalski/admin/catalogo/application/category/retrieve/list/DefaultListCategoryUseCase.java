@@ -2,7 +2,7 @@ package com.jiankowalski.admin.catalogo.application.category.retrieve.list;
 
 import com.jiankowalski.admin.catalogo.domain.Pagination;
 import com.jiankowalski.admin.catalogo.domain.category.CategoryGateway;
-import com.jiankowalski.admin.catalogo.domain.category.CategorySearchQuery;
+import com.jiankowalski.admin.catalogo.domain.category.SearchQuery;
 
 import java.util.Objects;
 
@@ -15,7 +15,7 @@ public class DefaultListCategoryUseCase extends ListCategoryUseCase {
     }
 
     @Override
-    public Pagination<CategoryListOutput> execute(CategorySearchQuery aQuery) {
+    public Pagination<CategoryListOutput> execute(SearchQuery aQuery) {
         return categoryGateway.findAll(aQuery)
                 .map(CategoryListOutput::from);
     }
