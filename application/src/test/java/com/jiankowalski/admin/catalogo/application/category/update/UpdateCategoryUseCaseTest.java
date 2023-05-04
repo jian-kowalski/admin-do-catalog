@@ -87,7 +87,7 @@ public class UpdateCategoryUseCaseTest {
                 .thenReturn(Optional.of(aCategory.clone()));
         final var notification = useCase.execute(aCommand).getLeft();
 
-        Assertions.assertEquals(expectedErrorMessage, notification.getFirstError().message());
+        Assertions.assertEquals(expectedErrorMessage, notification.firstError().message());
         Assertions.assertEquals(expectedErrorCount, notification.getErrors().size());
 
         verify(categoryGateway, times(0)).update(any());

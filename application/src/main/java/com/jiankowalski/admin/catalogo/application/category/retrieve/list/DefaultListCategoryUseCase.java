@@ -6,7 +6,7 @@ import com.jiankowalski.admin.catalogo.domain.category.SearchQuery;
 
 import java.util.Objects;
 
-public class DefaultListCategoryUseCase extends ListCategoryUseCase {
+public class DefaultListCategoryUseCase extends ListCategoriesUseCase {
 
     private final CategoryGateway categoryGateway;
 

@@ -43,6 +43,7 @@ public class GetCategoryByIdUseCaseTest {
         when(categoryGateway.findById(eq(expectedId))).thenReturn(Optional.of(aCategory.clone()));
 
         final var actualCategory = useCase.execute(expectedId.getValue());
+
         Assertions.assertEquals(expectedId, actualCategory.id());
         Assertions.assertEquals(expectedName, actualCategory.name());
         Assertions.assertEquals(expectedDescription, actualCategory.description());

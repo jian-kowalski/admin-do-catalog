@@ -7,7 +7,7 @@ import com.jiankowalski.admin.catalogo.application.category.delete.DeleteCategor
 import com.jiankowalski.admin.catalogo.application.category.retrieve.get.DefaultGetCategoryByIdUseCase;
 import com.jiankowalski.admin.catalogo.application.category.retrieve.get.GetCategoryByIdUseCase;
 import com.jiankowalski.admin.catalogo.application.category.retrieve.list.DefaultListCategoryUseCase;
-import com.jiankowalski.admin.catalogo.application.category.retrieve.list.ListCategoryUseCase;
+import com.jiankowalski.admin.catalogo.application.category.retrieve.list.ListCategoriesUseCase;
 import com.jiankowalski.admin.catalogo.application.category.update.DefaultUpdateCategoryUseCase;
 import com.jiankowalski.admin.catalogo.application.category.update.UpdateCategoryUseCase;
 import com.jiankowalski.admin.catalogo.domain.category.CategoryGateway;
@@ -38,7 +38,7 @@ public class CategoryUseCaseConfig {
     }
 
     @Bean
-    public ListCategoryUseCase listCategoryUseCase() {
+    public ListCategoriesUseCase listCategoryUseCase() {
         return new DefaultListCategoryUseCase(categoryGateway);
     }
 

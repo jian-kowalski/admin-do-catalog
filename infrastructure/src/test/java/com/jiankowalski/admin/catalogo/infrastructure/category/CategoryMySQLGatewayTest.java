@@ -1,9 +1,9 @@
 package com.jiankowalski.admin.catalogo.infrastructure.category;
 
+import com.jiankowalski.admin.catalogo.MySQLGatewayTest;
 import com.jiankowalski.admin.catalogo.domain.category.Category;
 import com.jiankowalski.admin.catalogo.domain.category.CategoryID;
 import com.jiankowalski.admin.catalogo.domain.category.SearchQuery;
-import com.jiankowalski.admin.catalogo.infrastructure.MySQLGatewayTest;
 import com.jiankowalski.admin.catalogo.infrastructure.category.persistence.CategoryJpaEntity;
 import com.jiankowalski.admin.catalogo.infrastructure.category.persistence.CategoryMySQLGateway;
 import org.junit.jupiter.api.Assertions;
